@@ -1,0 +1,27 @@
+version: "2.4"
+
+services:
+  nginx-app: # nginx for static files
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./:/var/www/html/:ro
+    ports: 
+      - "8080:80"
+
+  php-app: # php application
+    build: ./
+    environment:
+      - "APPNAME=ILBONUS"
+    volumes:
+      - ./index.php:/var/www/html/index.php:ro
+      - ./includes:/var/www/html/includes:ro
+      - ./templates:/var/www/html/templates:ro
+      - ./extensions:/var/www/html/extensions:ro
+      - ./logs:/var/www/html/logs
+      - ./uploads:/var/www/html/uploads
+    read_only: true
+    tmpfs:
+      - /tmp/
+  mongo-app: # mongo database for the application
+    image: mongo

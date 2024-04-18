@@ -1,0 +1,7 @@
+{
+    "require": {
+        "mongodb/mongodb": "==1.6.0",
+        "klein/klein": "==2.1.2",
+        "guzzlehttp/guzzle": ">=5.0 <6.0"
+    }
+}
