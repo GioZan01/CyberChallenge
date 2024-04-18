@@ -1,0 +1,9 @@
+body {
+  min-height: 100vh;
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 2em;
+  align: center;
+  text-align: justify;
+  font-family: Sans-Serif;
+}

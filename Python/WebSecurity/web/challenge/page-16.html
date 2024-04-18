@@ -1,0 +1,36 @@
+<!doctype HTML>
+
+<html>
+  <head>
+    <title>Daily lipsum {{i}}</title>
+    <style>
+      body {
+        min-height: 100vh;
+        max-width: 40em;
+        margin: 0 auto;
+        padding: 2em;
+        align: center;
+        text-align: justify;
+        font-family: Sans-Serif;
+      }
+    </style>
+  </head>
+  <body>
+    {% if flag_page %}
+      <h1>{{flag}}</h1>
+    {% else %}
+      <h1>Daily lipsum {{i}}</h1>
+    {% endif %}
+    {% for paragraph in paragraphs %}
+      <p>
+        {% for word, target in paragraph %}
+          {% if target is none %}
+            {{word}}
+          {% else %}
+            <a href="/page?p={{target}}">{{word}}</a>
+          {% endif %}
+        {% endfor %}
+      </p>
+    {% endfor %}
+  </body>
+</html>
