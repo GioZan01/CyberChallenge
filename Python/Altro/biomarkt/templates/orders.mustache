@@ -1,0 +1,61 @@
+{{> header.mustache}}
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section set-bg" style="margin-top: -1.5em" data-setbg="/static/img/breadcrumb.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>My Orders</h2>
+                        <div class="breadcrumb__option">
+                            <a href="/">Home</a>
+                            <span>My Orders</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Shoping Cart Section Begin -->
+    <section class="shoping-cart spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shoping__cart__table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order Id</th>
+                                    <th>Amount</th>
+                                    <th>Items</th>
+                                    <th>Delivery Details</th>
+                                    <th>Payment Details</th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#orders}}
+                                    <tr>
+                                        <td>{{id}}</td>
+                                        <td class="shoping__cart__total">${{amount}}</td>
+                                        <td>{{items}}</td>
+                                        <td>{{first_name}} {{last_name}}, {{address}}, {{postcode}} {{country}}</td>
+                                        <td>Name: {{card_owner}}, Number: {{card_number}}, Expiration Date: {{card_expiredate}}, CVV: {{card_cvv}}</td>
+                                        <td>{{notes}}</td>
+                                    </tr>
+                                {{/orders}}
+                            </tbody>
+                        </table>
+                        {{^orders}}
+                            <p align="center" class="mt-4"><b>No results.</b></p>
+                        {{/orders}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Shoping Cart Section End -->
+
+{{> footer.mustache}}

@@ -1,0 +1,11 @@
+version: '2'
+services:
+  biomarkt:
+    build: .
+    restart: on-failure
+    ports:
+      - 18080:18080
+    depends_on:
+      - postgres
+  postgres:
+    build: db/

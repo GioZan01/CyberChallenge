@@ -1,0 +1,67 @@
+<html lang="zxx">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>BIOMarkt
+        {{#title}}
+        - {{ title }}
+        {{/title}}
+        </title>
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="/static/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="/static/css/elegant-icons.css" type="text/css">
+        <link rel="stylesheet" href="/static/css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="/static/css/jquery-ui.min.css" type="text/css">
+        <link rel="stylesheet" href="/static/css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="/static/css/slicknav.min.css" type="text/css">
+        <link rel="stylesheet" href="/static/css/style.css" type="text/css">
+    </head>
+
+    <body>
+
+        <!-- Header Section Begin -->
+        <header class="header mb-4">
+            <div class="header__top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="header__top__left">
+                                <ul>
+                                    <li><a href="/"><i class="fa fa-shopping-bag"></i> BIOMarkt</a></li>
+                                    <li>The freshest, most honest and cleanest products possible!</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="header__top__right">
+                                <div class="header__top__right__social">
+                                    <a href="/cart"><i class="fa fa-shopping-cart"></i> Cart</a>
+                                    {{#loggedin}}
+                                    <a href="/orders?uid={{userid}}"><i class="fa fa-truck"></i> Orders</a>
+                                    
+                                    {{/loggedin}}
+                                </div>
+                                <div class="header__top__right__auth">
+                                    {{^loggedin}}
+                                    <a href="/register"><i class="fa fa-user-plus"></i> Register</a>
+                                    &nbsp;
+                                    <a href="/login"><i class="fa fa-sign-in"></i> Login</a>
+                                    {{/loggedin}}
+                                    {{#loggedin}}
+                                    <a href="/logout"><i class="fa fa-user"></i> {{ username }} &nbsp; <i class="fa fa-sign-out"></i></a>
+                                    {{/loggedin}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Header Section End -->
